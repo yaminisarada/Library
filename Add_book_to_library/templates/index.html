@@ -1,0 +1,74 @@
+<doctype html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: Tomato;
+    font-family: verdana;
+    font-size: 300%;
+	text-align:center;
+	font-family:Impact;
+}
+
+div.absolute {
+    position: absolute;
+    top: 100px;
+    right: 60;
+    width: 150px;
+    height: 50px;
+    style="color:MediumSeaGreen;"
+    font-size: 30px
+
+div.abposition {
+	  position: absolute
+	  text-align:center;
+	  top: 200px;
+	 
+	
+}
+
+</body>
+</style>
+
+</head>
+<title>BOOK LIBRARY</title>
+<h1>Book Library</h1>
+
+<p><p>
+
+<div class="containers">
+	<div class="absolute">
+		<a <button right = "30" type="button" class="btn btn-success" href="{{ url_for('.new_Biography') }}"> Add New Book </button></a>
+	</div>
+</div>
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% from "_formhelpers.html" import render_field %}
+<div class="abposition">
+	<form style="font-size:30px;text-align:center;" method=post>
+		<dl>
+		{{ render_field(form.select) }}
+		<p>
+		{{ render_field(form.search) }}
+		</dl>
+		<p><input type=submit value=Search>
+	</form>
+</div>
