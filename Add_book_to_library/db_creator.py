@@ -25,7 +25,7 @@ class Biography(Base):
     title = Column(String)
     release_date = Column(String)
     publisher = Column(String)
-    media_type = Column(String)
+    language = Column(String)
 
     academics_id = Column(Integer, ForeignKey("academics.id"))
     academics = relationship("Academic", backref=backref(

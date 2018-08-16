@@ -7,6 +7,6 @@ class Results(Table):
     title = Col('Title')
     release_date = Col('Release Date')
     publisher = Col('Publisher')
-    media_type = Col('Media')
+    language = Col('Language')
     edit = LinkCol('Edit', 'edit', url_kwargs=dict(id='id'))
     delete = LinkCol('Delete', 'delete', url_kwargs=dict(id='id'))

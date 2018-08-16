@@ -80,7 +80,7 @@ def save_changes(biography, form, new=False):
     biography.title = form.title.data
     biography.release_date = form.release_date.data
     biography.publisher = form.publisher.data
-    biography.media_type = form.media_type.data
+    biography.language = form.language.data
 
     if new:
         # Add the new Biography to the database
@@ -94,7 +94,7 @@ def save_changes(biography, form, new=False):
 def edit(id):
     qry = db_session.query(Biography).filter(
         Biography.id == id)
-    Biography = qry.first()
+    biography = qry.first()
 
     if Biography:
         form = BiographyForm(formdata=request.form, obj=biography)

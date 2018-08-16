@@ -19,7 +19,7 @@ class Biography(db.Model):
     title = db.Column(db.String)
     release_date = db.Column(db.String)
     publisher = db.Column(db.String)
-    media_type = db.Column(db.String)
+    language = db.Column(db.String)
 
     academics_id = db.Column(db.Integer, db.ForeignKey("academics.id"))
     academics = db.relationship("Academic", backref=db.backref(

@@ -10,12 +10,12 @@ class BookSearchForm(Form):
 
 
 class BiographyForm(Form):
-    media_types = [('Digital', 'Digital'),
-                   ('CD', 'CD'),
-                   ('Cassette Tape', 'Cassette Tape')
+    languages = [('English', 'English'),
+                   ('Telugu', 'Telugu'),
+                   ('Hindi', 'Hindi')
                    ]
     academics = StringField('Academic')
     title = StringField('Title')
     release_date = StringField('Release Date')
     publisher = StringField('Publisher')
-    media_type = SelectField('Media', choices=media_types)
+    language = SelectField('Language', choices=languages)
